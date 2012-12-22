@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# 2011 (CC0) Bartosz Szczesny <bszcz@bszcz.eu>
+# Copyright 2011 Bartosz Szczesny <bszcz@bszcz.eu> {bszcz.eu/license/MIT}
 
 com="qiv -m"
 
