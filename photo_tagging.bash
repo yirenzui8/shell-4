@@ -1,6 +1,7 @@
 #!/bin/bash
 
-# Copyright 2011 Bartosz Szczesny <bszcz@bszcz.eu> {bszcz.eu/license/MIT}
+# Copyright (c) 2011 Bartosz Szczesny
+# LICENSE: The MIT License (MIT)
 
 com="qiv -m"
 
