@@ -3,7 +3,7 @@
 # Copyright (c) 2013 Bartosz Szczesny
 # LICENSE: The MIT License (MIT)
 
-times="0300 0600 0900 1200 1500 1800 2100 2400 2700 3000 3300 3600" # times in seconds
+times=$(seq -w 300 300 3600) # times in seconds
 for ss in $times; do
         pngfile="${1}_ss${ss}.png"
         avconv -v quiet -ss ${ss} -frames 1 -i ${1} ${pngfile}
