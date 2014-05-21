@@ -7,7 +7,7 @@ git log -p --no-color --word-diff=porcelain \
 | sed 's/</\&lt;/g' \
 | sed 's/^commit\(.*\)$/<span style="color:orange">commit\1<\/span>/' \
 | sed 's/^@@ \([^@]*\) @@/<span style="color:blue">@@ \1 @@<\/span>/' \
-| sed 's/^-\([^-].*\)$/<span style="color:red">-\1<\/span>/' \
-| sed 's/^+\([^+].*\)$/<span style="color:green">+\1<\/span>/' \
+| sed 's/^-\(.*\)$/<span style="color:red">-\1<\/span>/' \
+| sed 's/^+\(.*\)$/<span style="color:green">+\1<\/span>/' \
 >> diff.html
 echo "</pre>" >> diff.html
