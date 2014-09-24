@@ -3,17 +3,17 @@
 # Copyright (c) 2014 Bartosz Szczesny <bszcz@bszcz.org>
 # This program is free software under the MIT license.
 
-tmp_pgm=onepix.pgm
-tmp_ppm=onepix.ppm
+tmp1x1pgm=tmp1x1.pgm
+tmp1x1ppm=tmp1x1.ppm
 
 for image in $@; do
-	convert -resize 1x1 $image $tmp_pgm &
-	convert -resize 1x1 $image $tmp_ppm &
+	convert -resize 1x1 $image $tmp1x1pgm &
+	convert -resize 1x1 $image $tmp1x1ppm &
 	wait
-	pixel_pgm=$(tail -n1 $tmp_pgm | hexdump -v -e '/1 "%02X"')
-	pixel_ppm=$(tail -n1 $tmp_ppm | hexdump -v -e '/1 "%02X"')
-	echo $pixel_pgm $pixel_ppm $image
+	hex1x1pgm=$(tail -n1 $tmp1x1pgm | hexdump -v -e '/1 "%02X"')
+	hex1x1ppm=$(tail -n1 $tmp1x1ppm | hexdump -v -e '/1 "%02X"')
+	echo $hex1x1pgm $hex1x1ppm $image
 done
 
-rm $tmp_pgm
-rm $tmp_ppm
+rm $tmp1x1pgm
+rm $tmp1x1ppm
